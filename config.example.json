@@ -1,0 +1,16 @@
+{
+  "whatsappGroups": ["My Apartment Group", "Family Group"],
+  "digestEmailTo": "you@example.com",
+  "digestEmailFrom": "WhatsApp Digest <you@example.com>",
+  "aiProvider": "openrouter",
+  "aiModel": "openai/gpt-4.1-mini",
+  "emailProvider": "resend",
+  "maxMessagesPerGroup": 250,
+  "scanLookbackHours": 24,
+  "headless": false,
+  "browserProfilePath": "./browser-profile",
+  "databasePath": "./data/digest.sqlite",
+  "sendDigestEvenIfNoImportantMessages": false,
+  "redactPhoneNumbers": true,
+  "dryRun": true
+}

@@ -1,0 +1,32 @@
+{
+  "name": "whatsapp-daily-digest",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal, read-only WhatsApp Web daily digest",
+  "type": "module",
+  "scripts": {
+    "login": "tsx src/cli.ts login",
+    "scan": "tsx src/cli.ts scan",
+    "digest": "tsx src/cli.ts digest",
+    "job": "tsx src/cli.ts job",
+    "ui": "tsx src/server.ts",
+    "clear-messages": "tsx src/cli.ts clear-messages",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "dotenv": "^16.4.7",
+    "playwright": "^1.51.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

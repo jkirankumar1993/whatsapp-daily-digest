@@ -1,0 +1,4 @@
+.preview-head{display:flex;align-items:center;justify-content:space-between;margin-top:26px}
+.preview-head h3{margin:0}
+.digest-preview{white-space:pre-wrap;word-break:break-word;max-height:520px;overflow:auto;padding:20px;border:1px solid #d9ddd8;border-radius:12px;background:#f7f8f6;color:#17231e;font:14px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace}
+.chat-filter{margin-top:14px}.selected-title{margin:22px 0 10px}.selected-chats{display:flex;flex-wrap:wrap;gap:8px}.selected-chip{display:flex;align-items:center;gap:8px;padding:8px 11px;border-radius:99px;background:#e7f4ee;color:#126448;font-weight:700}.selected-chip button{padding:0;background:transparent;color:#126448;font-size:17px}
