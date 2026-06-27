@@ -70,10 +70,20 @@ async function runAction(action: string): Promise<void> {
       fs.writeFileSync(path.resolve("data", "discovered-chats.json"), JSON.stringify(chats));
     } else {
       db = new AppDatabase(config);
-      if (action === "scan") await scan(config, db);
+      if (action === "scan") {
+        const result = await scan(config, db);
+        if (result.errors > 0) {
+          throw new Error(`Only ${result.groupsScanned} of ${config.whatsappGroups.length} selected groups scanned successfully.`);
+        }
+      }
       else if (action === "digest") await createDigest(config, db);
       else if (action === "job") {
         const result = await scan(config, db);
+        if (result.errors > 0 || result.groupsScanned !== config.whatsappGroups.length) {
+          throw new Error(
+            `Only ${result.groupsScanned} of ${config.whatsappGroups.length} selected groups scanned successfully; digest was not sent.`
+          );
+        }
         if (result.messagesFound === 0) {
           throw new Error("Scan opened the selected chats but found no visible messages; digest was not generated.");
         }
